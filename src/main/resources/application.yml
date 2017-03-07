@@ -1,0 +1,36 @@
+spring.jmx:
+   enabled: false
+
+spring.datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:bootexample;MODE=MySQL
+
+server:
+  port: 8090
+
+security:
+  basic:
+    enabled: false
+
+management:
+  port: 8091
+  security:
+    enabled: false # management port is internal only. no need to secure it.
+
+project:
+  name: lochsideHouseBookingSystem
+  version: 0.1.0
+  description: lochside House Booking System
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
+
+
+spring:
+  profiles: test
+
+spring.jpa:
+    hibernate.ddl-auto: create-drop
